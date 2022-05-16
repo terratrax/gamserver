@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+
+name: "avocado-systems/avocado-web"
+
+tags:
+- "2.3.sp2"
+- "latest"
+
+args:
+  BASE_IMAGE: "redhat/ubi/ubi8"
+  BASE_TAG: "8.5"
+
+labels:
+  org.opencontainers.image.title: "avocado-web"
+  org.opencontainers.image.description: "Avocado Orchestrator - web application"
+  org.opencontainers.image.licenses: "proprietary"
+  org.opencontainers.image.vendor: "Avocado Systems"
+  org.opencontainers.image.version: "2.3.sp2"
+  mil.dso.ironbank.image.type: "commercial"
+  mil.dso.ironbank.product.name: "Avocado Orchestrator"
+
+resources:
+- filename: orchestrator-2.3.sp2.18.tar 
+  url: https://avocadosys-for-ironbank.s3.us-west-1.amazonaws.com/pkgs/orchestrator-2.3.sp2.18.tar
+  validation:
+    type: sha256
+    value: ac5f0c9f388048c8322782de7a06059c1343896e31eb96e9ddeac65a3fef1a85 
+
+- filename: kafka_2.12-2.5.0.tar.gz
+  url: https://avocadosys-for-ironbank.s3.us-west-1.amazonaws.com/pkgs/kafka_2.12-2.5.0.tar.gz
+  validation:
+    type: sha256
+    value: 30cd5db2b8af1aa0c6334e3657c26eaf23c8274dd986d4586c910076cd1521c6
+
+- filename: jdk-8u211-linux-x64.tar.gz 
+  url: https://avocadosys-for-ironbank.s3.us-west-1.amazonaws.com/pkgs/jdk-8u211-linux-x64.tar.gz
+  validation:
+    type: sha256
+    value: c0b7e45330c3f79750c89de6ee0d949ed4af946849592154874d22abc9c4668d
+
+- filename: apache-zookeeper-3.6.1-bin.tar.gz 
+  url: https://avocadosys-for-ironbank.s3.us-west-1.amazonaws.com/pkgs/apache-zookeeper-3.6.1-bin.tar.gz
+  validation:
+    type: sha256
+    value: 00a383f8e8c3b4eed13b2dea41767b8368d8773ea555756a78570c760c40f4b9
+    
+maintainers:
+- email: "kjasapara@avocadosys.com"
+  name: "Kalpesh Jasapara"
+  username: "kalpeshj"rl 
